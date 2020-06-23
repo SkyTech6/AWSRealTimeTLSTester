@@ -1044,7 +1044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f874d1616d185f43901188ba04f54e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usingTLS: 1
+  usingTLS: 0
   clientManager: {fileID: 939228524}
   apiURL: https://twb24ldr37.execute-api.us-east-1.amazonaws.com/dev
   noCertGameEndpoint: /addNoCertGame
