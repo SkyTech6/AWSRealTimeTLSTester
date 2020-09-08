@@ -1046,7 +1046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   usingTLS: 0
   clientManager: {fileID: 939228524}
-  apiURL: https://laq3mj22cd.execute-api.us-east-1.amazonaws.com/dev
+  apiURL: https://andres.suitedrundowngaming.com
   noCertGameEndpoint: /addNoCertGame
   yesCertGameEndpoint: /addCertGame
   addPlayerSessionEndpoint: /addPlayerSession
