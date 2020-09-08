@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/NoTLS.unity
+    guid: e2d52fa4f36ccd347a4c7e7a1217a352
   m_configObjects: {}

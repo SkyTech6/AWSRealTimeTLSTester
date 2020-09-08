@@ -450,7 +450,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 261, y: 122}
+  m_AnchoredPosition: {x: 261, y: 619}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &346389720
@@ -553,7 +553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 261, y: 141}
+  m_AnchoredPosition: {x: 261, y: 638}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &368674897
@@ -1046,7 +1046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   usingTLS: 0
   clientManager: {fileID: 939228524}
-  apiURL: https://twb24ldr37.execute-api.us-east-1.amazonaws.com/dev
+  apiURL: https://laq3mj22cd.execute-api.us-east-1.amazonaws.com/dev
   noCertGameEndpoint: /addNoCertGame
   yesCertGameEndpoint: /addCertGame
   addPlayerSessionEndpoint: /addPlayerSession

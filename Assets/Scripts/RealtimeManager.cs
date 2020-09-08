@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Text;
 using System.Linq;
 using System.Collections;
@@ -87,7 +88,7 @@ public class RealtimeManager : MonoBehaviour
 
     void Start()
     {
-        // client.DefaultRequestHeaders.Add("Authorization", "skytech6");
+
     }
 
     void Update()
@@ -104,7 +105,7 @@ public class RealtimeManager : MonoBehaviour
     async void AddSession()
     {
         HttpResponseMessage result;
-        if(!usingTLS)
+        if (!usingTLS)
             result = await client.GetAsync(apiURL + noCertGameEndpoint);
         else
             result = await client.GetAsync(apiURL + yesCertGameEndpoint);
@@ -152,10 +153,13 @@ public class RealtimeManager : MonoBehaviour
 
         _client.DataReceived += OnDataReceived;
 
-        int UDPListenPort = 8921;
+        int ListenPort = 8921;
 
-        clientManager.MessageReceived($"[client] TLS: {usingTLS}");
-        _client.Connect(ipAddr, port, UDPListenPort, token);
+        // if (usingTLS)
+        //     ListenPort = FindAvailableTCPPort(49664, 49670);
+
+        clientManager.MessageReceived($"[client] TLS: {usingTLS} with Port: {ListenPort}");
+        _client.Connect(ipAddr, port, ListenPort, token);
 
         while (true)
         {
@@ -166,6 +170,24 @@ public class RealtimeManager : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    private int FindAvailableTCPPort(int firstPort, int lastPort)
+    {
+        var TCPEndPoints = IPGlobalProperties.GetIPGlobalProperties().GetActiveTcpListeners();
+        List<int> usedPorts = new List<int>();
+        usedPorts.AddRange(from n in TCPEndPoints where n.Port >= firstPort && n.Port <= lastPort select n.Port);
+        usedPorts.Sort();
+        for (int testPort = firstPort; testPort <= lastPort; ++testPort)
+        {
+            Debug.Log(testPort);
+
+            if (!usedPorts.Contains(testPort))
+            {
+                return testPort;
+            }
+        }
+        return -1;
     }
 
     public void JoinGroupTen()
@@ -180,7 +202,7 @@ public class RealtimeManager : MonoBehaviour
 
         if (e.OpCode == 500)
             QForMainThread(clientManager.KeepAlive);
-        else if(e.OpCode == 400)
+        else if (e.OpCode == 400)
             QForMainThread(clientManager.GroupAlive);
         else if (e.OpCode == 200)
         {
@@ -191,7 +213,15 @@ public class RealtimeManager : MonoBehaviour
 
     public void SendMessagePayload(string msg)
     {
-        _client.SendEvent(200, Encoding.ASCII.GetBytes(msg));
+        if (!usingTLS)
+            _client.SendEvent(200, Encoding.ASCII.GetBytes(msg));
+        else
+        {
+            RTMessage myRT = _client.NewMessage(200).WithTargetPlayer(-1).WithDeliveryIntent(DeliveryIntent.Reliable).WithPayload(Encoding.ASCII.GetBytes(msg));
+            myRT.WithTargetPlayer(-1);
+
+            _client.SendMessage(myRT);
+        }
     }
 
     private Aws.GameLift.Realtime.Client _client;
