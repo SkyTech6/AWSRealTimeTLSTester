@@ -15,6 +15,7 @@ public class ClientManager : MonoBehaviour
     private int keepAliveCounter;
     public Text t_GroupAliveCounter;
     private int groupAliveCounter;
+    public Image toggle;
 
     private List<GameObject> msgs;
 
@@ -23,8 +24,31 @@ public class ClientManager : MonoBehaviour
         msgs = new List<GameObject>();
         b_CreateSession.onClick.AddListener(() => CreateSession());
         b_SendMessage.onClick.AddListener(() => SendMessage());
+        toggle.GetComponent<Button>().onClick.AddListener(() => ToggleTLS());
         t_KeepAliveCounter.text = "";
         t_GroupAliveCounter.text = "";
+
+        if(realtime.usingTLS)
+            toggle.color = Color.blue;
+        else
+            toggle.color = Color.red;
+    }
+
+    void ToggleTLS()
+    {
+        if(realtime.isConnected())
+            return;
+
+        if(realtime.usingTLS)
+        {
+            toggle.color = Color.red;
+            realtime.usingTLS = false;
+        }
+        else
+        {
+            toggle.color = Color.blue;
+            realtime.usingTLS = true;
+        }
     }
 
     public void MessageReceived(string text)

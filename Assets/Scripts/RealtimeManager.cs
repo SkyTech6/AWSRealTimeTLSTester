@@ -193,6 +193,7 @@ public class RealtimeManager : MonoBehaviour
     public void JoinGroupTen()
     {
         _client.JoinGroup(10);
+
     }
 
     private void OnDataReceived(object sender, DataReceivedEventArgs e)
@@ -225,7 +226,13 @@ public class RealtimeManager : MonoBehaviour
     }
 
     private Aws.GameLift.Realtime.Client _client;
-    public bool isConnected() { return _client.ConnectedAndReady; }
+    public bool isConnected()
+    {
+        if(_client == null)
+            return false;
+
+        return _client.ConnectedAndReady;
+    }
 
     private Queue<Action> _mainThreadQueue = new Queue<Action>();
 
