@@ -155,9 +155,6 @@ public class RealtimeManager : MonoBehaviour
 
         int ListenPort = 8921;
 
-        // if (usingTLS)
-        //     ListenPort = FindAvailableTCPPort(49664, 49670);
-
         clientManager.MessageReceived($"[client] TLS: {usingTLS} with Port: {ListenPort}");
         _client.Connect(ipAddr, port, ListenPort, token);
 
@@ -172,28 +169,9 @@ public class RealtimeManager : MonoBehaviour
         }
     }
 
-    private int FindAvailableTCPPort(int firstPort, int lastPort)
-    {
-        var TCPEndPoints = IPGlobalProperties.GetIPGlobalProperties().GetActiveTcpListeners();
-        List<int> usedPorts = new List<int>();
-        usedPorts.AddRange(from n in TCPEndPoints where n.Port >= firstPort && n.Port <= lastPort select n.Port);
-        usedPorts.Sort();
-        for (int testPort = firstPort; testPort <= lastPort; ++testPort)
-        {
-            Debug.Log(testPort);
-
-            if (!usedPorts.Contains(testPort))
-            {
-                return testPort;
-            }
-        }
-        return -1;
-    }
-
     public void JoinGroupTen()
     {
         _client.JoinGroup(10);
-
     }
 
     private void OnDataReceived(object sender, DataReceivedEventArgs e)
