@@ -8,7 +8,7 @@
 - Group Alive Pings - Works
 - Send Message - Works
 
-## Unity Editor - Cert w/ TLS/DTLS
+## Unity Editor - Cert w/ TLS&DTLS
 - Create Game Session - Works
 - Keep Alive Pings - Works
 - Join Group - **CRASH**
@@ -22,7 +22,7 @@
 - Group Alive Pings - Untested
 - Send Message - Untested
 
-## Windows Standalone - Cert w/ TLS/DTLS
+## Windows Standalone - Cert w/ TLS&DTLS
 - Create Game Session - Untested
 - Keep Alive Pings - Untested
 - Join Group - Untested
@@ -37,7 +37,7 @@
 - Group Alive Pings - Untested
 - Send Message - Untested
 
-## Android App - Cert w/ TLS/DTLS
+## Android App - Cert w/ TLS&DTLS
 - Create Game Session - Untested
 - Keep Alive Pings - Untested
 - Join Group - Untested
@@ -52,7 +52,7 @@
 - Group Alive Pings - Untested
 - Send Message - Untested
 
-## iOS App - Cert w/ TLS/DTLS
+## iOS App - Cert w/ TLS&DTLS
 - Create Game Session - Untested
 - Keep Alive Pings - Untested
 - Join Group - Untested
