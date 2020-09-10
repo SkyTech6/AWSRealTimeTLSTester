@@ -31,14 +31,14 @@
 - Group Alive Pings - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
 - Send Message - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
 
-#### Windows Standalone x86 - Non-Cert
+## Windows Standalone x86 - Non-Cert
 - Create Game Session - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
 - Keep Alive Pings - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
 - Join Group - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
 - Group Alive Pings - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
 - Send Message - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
 
-#### Windows Standalone x86 - Cert w/ TLS&DTLS
+## Windows Standalone x86 - Cert w/ TLS&DTLS
 - Create Game Session - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
 - Keep Alive Pings - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)
 - Join Group - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)
