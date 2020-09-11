@@ -1,0 +1,10 @@
+<linker>
+<assembly fullname="Google.Protobuf" preserve="all"/>
+<assembly fullname="GameLiftRealtimeClientSdkNet45" preserve="all" />
+<assembly fullname="SuperSocket.ClientEngine" preserve="all" />
+<assembly fullname="WebSocket4Net" preserve="all" />
+<assembly fullname="System.Buffers" preserve="all" />
+<assembly fullname="System.Memory" preserve="all" />
+<assembly fullname="System.Runtime.CompilerServices.Unsafe" preserve="all" />
+<assembly fullname="log4net" preserve="all" />
+</linker>
