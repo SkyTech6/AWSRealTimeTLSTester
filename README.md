@@ -1,4 +1,6 @@
 # TLSReproductionCase
+![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)
+[![CodeFactor](https://www.codefactor.io/repository/github/skytech6/awsrealtimetlstester/badge/master)](https://www.codefactor.io/repository/github/skytech6/awsrealtimetlstester/overview/master)
  
 # Known Results
 ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) - Working Functionality
