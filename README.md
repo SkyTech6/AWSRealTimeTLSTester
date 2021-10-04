@@ -1,97 +1,77 @@
 # TLSReproductionCase
+![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)
+[![CodeFactor](https://www.codefactor.io/repository/github/skytech6/awsrealtimetlstester/badge/master)](https://www.codefactor.io/repository/github/skytech6/awsrealtimetlstester/overview/master)
  
 # Known Results
 ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) - Working Functionality
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) - Not Working Functionality
-## Unity Editor - Non-Cert
-- Create Game Session - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Keep Alive Pings - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Join Group - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Group Alive Pings - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Send Message - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
+? - Unable to test due to prior failure
 
-## Unity Editor - Cert w/ TLS&DTLS
-- Create Game Session - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Keep Alive Pings - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Join Group - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) **CRASH**
-- Group Alive Pings - n/a
-- Send Message - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) (only with SendMessage(), ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) **SendEvent() will crash**)
+## Unity Editor
 
-## Windows Standalone - Non-Cert
-- Create Game Session - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Keep Alive Pings - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Join Group - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Group Alive Pings - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Send Message - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
+|**Action** | **Non-Cert** | **Cert w/[D]TLS** |
+| ----- |:-------:|:---:|
+|Create Game Session | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) |
+|KeepAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) |
+|Join Group | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) *1* |
+|GroupAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
+|Send Message | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) *2* |
 
-## Windows Standalone - Cert w/ TLS&DTLS
-- Create Game Session - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Keep Alive Pings - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Join Group - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Group Alive Pings - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Send Message - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
+*1* - Join Group will cause the Unity Editor to crash on cert w/ TLS/DTLS
 
-## Windows Standalone x86 - Non-Cert
-- Create Game Session - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Keep Alive Pings - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Join Group - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Group Alive Pings - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Send Message - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
+*2* - Only works with _client.SendMessage(), using _client.SendEvent() will cause a crash. (This tester by default will always use SendMessage() for cert and SendEvent() for non-cert; until or if Amazon's Gamelift team specifies that SendMessage is the appropriate method to always use.) 
 
-## Windows Standalone x86 - Cert w/ TLS&DTLS
-- Create Game Session - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)
-- Keep Alive Pings - Can't Test
-- Join Group - Can't Test
-- Group Alive Pings - Can't Test
-- Send Message - Can't Test
+## Windows Standalone - x64
 
-This seems like the usual result of the connection not being completed after creating the session. 
+|**Action** | **Non-Cert** | **Cert w/[D]TLS** |
+| ----- |:-------:|:---:|
+|Create Game Session | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) |
+|KeepAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) |
+|Join Group | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) |
+|GroupAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) |
+|Send Message | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) |
 
-## Android App - Non-Cert
-- Create Game Session - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Keep Alive Pings - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Join Group - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Group Alive Pings - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-- Send Message - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
 
-## Android App - Cert w/ TLS&DTLS
-- Create Game Session - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)
-- Keep Alive Pings - Can't Test
-- Join Group - Can't Test
-- Group Alive Pings - Can't Test
-- Send Message - Can't Test
+## Windows Standalone x86
 
-## iOS App - Non-Cert
-- Create Game Session - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) **Freezes application**
-```
-[INFO] Client requested fast connection, but not currently setup -- falling back to reliable
-[ERROR] Exception occurred sending data. Exception: The type initializer for 'Com.Gamelift.Rt.Proto.PacketReflection' threw an exception.
-System.Action`1:Invoke(T)
-Aws.GameLift.Realtime.ClientLogger:Output(LogLevel, String)
-Aws.GameLift.Realtime.Network.BaseConnection:Send(Packet)
-Aws.GameLift.Realtime.Client:Send(RTMessage)
-Aws.GameLift.Realtime.Client:OnConnectionOpen(Object, EventArgs)
-System.EventHandler:Invoke(Object, EventArgs)
-System.EventHandler:Invoke(Object, EventArgs)
-WebSocket4Net.Command.Handshake:ExecuteCommand(WebSocket, WebSocketCommandInfo)
-WebSocket4Net.WebSocket:ExecuteCommand(WebSocketCommandInfo)
-WebSocket4Net.WebSocket:OnDataReceived(Byte[], Int32, Int32)
-System.EventHandler`1:Invoke(Object, TEventArgs)
-SuperSocket.ClientEngine.AsyncTcpSession:ProcessReceive(SocketAsyncEventArgs)
-System.EventHandler`1:Invoke(Object, TEventArgs)
-System.Net.Sockets.<>c:<.cctor>b__309_7(IAsyncResult)
-System.AsyncCallback:Invoke(IAsyncResult)
-System.Threading.WaitCallback:Invoke(Object)
-System.Threading.ThreadPoolWorkQueue:Dispatch()
-```
-- Keep Alive Pings - Untested
-- Join Group - Untested
-- Group Alive Pings - Untested
-- Send Message - Untested
+|**Action** | **Non-Cert** | **Cert w/[D]TLS** |
+| ----- |:-------:|:---:|
+|Create Game Session | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) |
+|KeepAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
+|Join Group | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
+|GroupAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
+|Send Message | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
 
-## iOS App - Cert w/ TLS&DTLS
-- Create Game Session - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) **Same as Non-Cert**
-- Keep Alive Pings - Untested
-- Join Group - Untested
-- Group Alive Pings - Untested
-- Send Message - Untested
+Note - This seems like the usual result of the connection not being completed after creating the session. 
+
+## Android App (Mono JIT)
+
+|**Action** | **Non-Cert** | **Cert w/[D]TLS** |
+| ----- |:-------:|:---:|
+|Create Game Session | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) |
+|KeepAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
+|Join Group | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
+|GroupAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
+|Send Message | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
+
+## Android App (IL2CPP AOT)
+
+|**Action** | **Non-Cert** | **Cert w/[D]TLS** |
+| ----- |:-------:|:---:|
+|Create Game Session | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) |
+|KeepAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
+|Join Group | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
+|GroupAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
+|Send Message | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
+
+## iOS App 
+
+|**Action** | **Non-Cert** | **Cert w/[D]TLS** |
+| ----- |:-------:|:---:|
+|Create Game Session | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) |
+|KeepAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) *1* |
+|Join Group | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
+|GroupAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
+|Send Message | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
+
+*1* - Session Created, Connection Not Fully Established
