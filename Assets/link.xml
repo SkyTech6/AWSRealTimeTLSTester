@@ -1,6 +1,7 @@
 <linker>
 <assembly fullname="Google.Protobuf" preserve="all"/>
 <assembly fullname="GameLiftRealtimeClientSdkNet45" preserve="all" />
+<assembly fullname="GameLiftRealtimeClientSdkForFrameworkNet45" preserve="all" />
 <assembly fullname="SuperSocket.ClientEngine" preserve="all" />
 <assembly fullname="WebSocket4Net" preserve="all" />
 <assembly fullname="System.Buffers" preserve="all" />
