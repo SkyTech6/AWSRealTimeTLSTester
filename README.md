@@ -45,13 +45,25 @@
 
 |**Action** | **Non-Cert** | **Cert w/[D]TLS** |
 | ----- |:-------:|:---:|
-|Create Game Session | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) |
-|KeepAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
-|Join Group | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
-|GroupAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
-|Send Message | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
+|Create Game Session | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | Not Tested |
+|KeepAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | - |
+|Join Group | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | - |
+|GroupAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | - |
+|Send Message | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | - |
 
-Note - This seems like the usual result of the connection not being completed after creating the session. 
+Haven't tested the x86 since we haven't attempted to make a target compiled dll (if someone does test this, feel free to fork & PR). 
+
+## Windows Standalone x86
+
+|**Action** | **Non-Cert** | **Cert w/[D]TLS** |
+| ----- |:-------:|:---:|
+|Create Game Session | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) *1 |
+|KeepAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | - |
+|Join Group | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | - |
+|GroupAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | - |
+|Send Message | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | - |
+
+*1 - We have attempted to make a dylib for Mac, but haven't been able to get one working yet
 
 ## Android App (Mono JIT)
 
@@ -78,9 +90,7 @@ Note - This seems like the usual result of the connection not being completed af
 |**Action** | **Non-Cert** | **Cert w/[D]TLS** |
 | ----- |:-------:|:---:|
 |Create Game Session | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) |
-|KeepAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) *1* |
-|Join Group | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
-|GroupAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
-|Send Message | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ? |
-
-*1* - Session Created, Connection Not Fully Established
+|KeepAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) |
+|Join Group | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) |
+|GroupAlive Pings | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) |
+|Send Message | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) | ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) |
