@@ -53,7 +53,7 @@
 
 Haven't tested the x86 since we haven't attempted to make a target compiled dll (if someone does test this, feel free to fork & PR). 
 
-## Windows Standalone x86
+## Mac OSX Standalone
 
 |**Action** | **Non-Cert** | **Cert w/[D]TLS** |
 | ----- |:-------:|:---:|
